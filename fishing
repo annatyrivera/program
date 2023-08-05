@@ -1,0 +1,26 @@
+import random
+
+fish_list = ["Bass", "Trout", "Salmon", "Catfish", "Perch"]
+caught_fish = []
+
+def fish():
+    return random.choice(fish_list)
+
+print("Welcome to the Fishing Program!")
+
+while True:
+    choice = input("Press 'C' to cast your line or 'Q' to quit: ")
+
+    if choice.upper() == 'C':
+        new_fish = fish()
+        caught_fish.append(new_fish)
+        print("You caught a", new_fish)
+    elif choice.upper() == 'Q':
+        print("Thank you for playing!")
+        break
+    else:
+        print("Invalid choice. Please try again.")
+
+print("Your catch of the day:")
+for fish in caught_fish:
+    print(fish)
